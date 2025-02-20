@@ -13,7 +13,7 @@ dp = Dispatcher()
 
 @dp.message(CommandStart())
 async def start(message: Message):
-    await message.answer('Hello, world from test bot!')
+    await message.answer('Hello, world from bot!')
 
 async def main():
     await dp.start_polling(bot)
