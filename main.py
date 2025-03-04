@@ -13,7 +13,8 @@ dp = Dispatcher()
 
 @dp.message(CommandStart())
 async def start(message: Message):
-    await message.answer('Hello, world from bot!')
+    msg = os.getenv('MESSAGE')
+    await message.answer(f'Hello, world from bot. {msg}!')
 
 async def main():
     await dp.start_polling(bot)
@@ -21,4 +22,3 @@ async def main():
 if __name__ == '__main__':
     asyncio.run(main())
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
